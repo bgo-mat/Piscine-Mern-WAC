@@ -1,0 +1,41 @@
+db.createCollection("students", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: ["Id", "lastname", "firstname", "email", "phone", "validated", "admin"],
+         properties: {
+            Id: {
+               bsonType: "int",
+               description: "must be an integer and is required"
+            },
+            lastname: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            firstname: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            email: {
+              bsonType: "string",
+              pattern: "^[\\w._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$",
+              description: "must be a string and match the regular expression pattern and is required"
+            },
+            phone: {
+              bsonType: "string",
+              pattern: "^\\+?[1-9]\\d{1,14}$",
+              description: "must be a string and match the regular expression pattern and is required"
+            },
+            validated: {
+               bsonType: "string",
+               description: "must be one of the specified strings: 'validated', 'in progress', 'rejected'",
+               enum: ["validated", "in progress", "rejected"]
+            },
+            admin: {
+               bsonType: "bool",
+               description: "must be a boolean and is required"
+            }
+         }
+      }
+   }
+})

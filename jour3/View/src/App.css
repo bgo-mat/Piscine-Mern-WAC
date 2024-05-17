@@ -1,0 +1,131 @@
+body {
+    background-color: #1c1e22;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #2c2f33;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.toggle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.toggle span {
+    flex: 1;
+    cursor: pointer;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+.toggle .active {
+    color: #f1c40f;
+}
+
+.toggle .toggle-btn {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: 4px;
+    background-color: #f1c40f;
+    transition: left 0.3s;
+}
+
+.form {
+    text-align: left;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.error{
+    color: red;
+}
+
+.blocDeco{
+    display: flex;
+    position: absolute;
+    right:4vw;
+    top:4vh;
+    gap:2vw;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:2vw;
+    width: 100vw;
+    height: 100vh;
+}
+
+.submit-btn:hover {
+    background-color: #d4ac0d;
+}
+
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #bdc3c7;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: #ecf0f1;
+}
+
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.article-card {
+    border: 1px solid #ddd;
+    cursor: pointer;
+    padding: 16px;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    box-shadow: 0 8px 16px rgba(178, 178, 178, 0.3);
+}

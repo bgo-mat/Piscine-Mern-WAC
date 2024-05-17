@@ -1,0 +1,28 @@
+db.createCollection("articles", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: ["id", "title", "price","description"],
+         properties: {
+            id: {
+               bsonType: "int",
+               description: "must be an integer and is required"
+            },
+            title: {
+               bsonType: "string",
+               maxLength: 30,
+               description: "must be a string, max length of 30 characters and is required"
+            },
+            price: {
+              bsonType: "int",
+              description: "must be an integer and is required"
+            },
+            description: {
+              bsonType: "string",
+              maxLength: 600,
+              description: "must be a string, max length of 600 characters and is required",
+            },
+         }
+      }
+   }
+})

@@ -1,0 +1,38 @@
+db.createCollection("users", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: ["Id", "login", "email","password", "admin"],
+         properties: {
+            Id: {
+               bsonType: "int",
+               description: "must be an integer and is required"
+            },
+            login: {
+               bsonType: "string",
+               minLength: 5,
+               maxLength: 20,
+               description: "must be a string and is required"
+            },
+            email: {
+              bsonType: "string",
+              pattern: "^[\\w._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$",
+              description: "must be a string and match the regular expression pattern and is required"
+            },
+            password: {
+              bsonType: "string",
+              description: "must be a string and is required",
+            },
+            admin: {
+               bsonType: "bool",
+               description: "must be a boolean and is required"
+            }
+         }
+      }
+   }
+})
+
+
+
+db.users.createIndex({ login: 1 }, { unique: true });
+db.users.createIndex({ email: 1 }, { unique: true });

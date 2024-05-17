@@ -1,0 +1,28 @@
+db.createCollection("comments", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: ["id", "id_user", "id_ticket","content"],
+         properties: {
+            id: {
+               bsonType: "int",
+               description: "must be an integer and is required"
+            },
+            id_user: {
+               bsonType: "int",
+               description: "must be an integer and is required"
+            },
+            id_ticket: {
+               bsonType: "int",
+               description: "must be an integer and is required"
+            },
+            content: {
+            bsonType: "string",
+            maxLength: 200,
+            description: "must be a string, max 200 characters and is required"
+            },
+
+         }
+      }
+   }
+})

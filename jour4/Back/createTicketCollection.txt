@@ -1,0 +1,29 @@
+db.createCollection("tickets", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: ["id", "id_user", "title","content"],
+         properties: {
+            id: {
+               bsonType: "int",
+               description: "must be an integer and is required"
+            },
+            id_user: {
+               bsonType: "int",
+               description: "must be an integer and is required"
+            },
+            title: {
+              bsonType: "string",
+              maxLength: 40,
+              description: "must be a string, max 40 characters and is required"
+            },
+            content: {
+            bsonType: "string",
+            maxLength: 1000,
+            description: "must be a string, max 1000 characters and is required"
+            },
+
+         }
+      }
+   }
+})
